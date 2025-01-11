@@ -4,4 +4,4 @@ Codename: unstable
 Architectures: source amd64
 Components: main
 Description: BlissOS Debian buildiso repo
-SignWith: 381CDE5C937EC73AE0406E4F7C414A0EE6ECD05A
+SignWith: 658CE0EA92FF727CD3E81AC4F5216CCB1A9AA8CC
