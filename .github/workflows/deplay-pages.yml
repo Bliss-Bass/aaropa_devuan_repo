@@ -28,19 +28,22 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Install dependencies
-        run: |
-          sudo apt update
-          sudo apt upgrade
-          sudo apt install reprepro
-      
-      - name: Configure GPG Key
-        run: |
-          echo "${{ secrets.GPG_SIGNING_KEY }}" | gpg --import
-
       - name: Build repository
-        run: |
-          ./download.sh
+        uses: DevChall-by-SDCY-and-VXM/build-deb-repo@main
+        with:
+          label: BlissOS debian repo
+          origin: blisslabs.org
+          desc: BlissOS Debian buildiso repo
+          gpg_signing_key: "${{ secrets.GPG_SIGNING_KEY }}"
+          from_metadatas: |
+            https://github.com/Bliss-Bass/aaropa_busybox/releases/latest/download
+            https://github.com/Bliss-Bass/aaropa_calamares/releases/latest/download
+            https://github.com/Bliss-Bass/grub2-themes/releases/latest
+            https://github.com/shadichy/android-tools/releases/latest/download
+            https://github.com/shadichy/grub-android-x86/releases/latest/download
+      
+      - name: Extract artifact
+        run: unzip -o dist.zip
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
