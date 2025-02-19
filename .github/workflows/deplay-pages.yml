@@ -36,12 +36,12 @@ jobs:
           label: BlissOS debian repo
           origin: blisslabs.org
           desc: BlissOS Debian buildiso repo
-          maintainer: Bùi Gia Viện (BlissLabs) <shadichy@blisslabs.org>
+          maintainer: Jon West <jwest@navotpala.tech>
           gpg_signing_key: "${{ secrets.GPG_SIGNING_KEY }}"
           from_metadatas: |
-            https://github.com/BlissOS/aaropa_busybox/releases/latest/download
-            https://github.com/BlissOS/aaropa_calamares/releases/latest/download
-            https://github.com/BlissOS/grub2-themes/releases/latest/download
+            https://github.com/Bliss-Bass/aaropa_busybox/releases/latest/download
+            https://github.com/Bliss-Bass/aaropa_calamares/releases/latest/download
+            https://github.com/Bliss-Bass/grub2-themes/releases/latest/download
             https://github.com/shadichy/android-tools/releases/latest/download
             https://github.com/shadichy/grub-android-x86/releases/latest/download
       
